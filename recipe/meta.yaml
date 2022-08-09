@@ -1,5 +1,5 @@
 {% set name = "area-detector-handlers" %}
-{% set version = "0.0.8" %}
+{% set version = "0.0.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 676cec048d2d41136d758fcdfe94a53aca551d2d3c267daf33c4a112a5662f18
+  sha256: 20339216fb1e78fe756a04f8ddff59b97edc9a88438ea9c26e245cba42d20592
 
 build:
   number: 0
@@ -46,4 +46,5 @@ extra:
   recipe-maintainers:
     - mrakitin
     - kbeeperez
+    - gwbischof
     - conda-forge/event-model
