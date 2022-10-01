@@ -1,5 +1,5 @@
 {% set name = "area-detector-handlers" %}
-{% set version = "0.0.9" %}
+{% set version = "0.0.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 20339216fb1e78fe756a04f8ddff59b97edc9a88438ea9c26e245cba42d20592
+  sha256: c184c831ebb6214e519b7b9e0676f3736c255db9b57fcedebdd58dfe0a39c5bf
 
 build:
   number: 0
@@ -15,7 +15,7 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python >=3.6
     - pip
   run:
