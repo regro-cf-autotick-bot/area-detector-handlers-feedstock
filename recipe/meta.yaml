@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: c184c831ebb6214e519b7b9e0676f3736c255db9b57fcedebdd58dfe0a39c5bf
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - dask
     - entrypoints
     - h5py
@@ -32,6 +32,7 @@ test:
     - area_detector_handlers.handlers
   requires:
     - pytest
+    - python {{ python_min }}
   commands:
     - pytest -v --pyargs area_detector_handlers  # [not win]
 
